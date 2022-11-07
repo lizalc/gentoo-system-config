@@ -1,0 +1,6 @@
+# Prefer the solaar icon to the battery icon in the system tray.
+if [ "${EBUILD_PHASE}" == "configure" ];
+then
+	sed -i 's|Exec=solaar|\0 --battery-icons solaar|g' "${S}/share/applications/solaar.desktop"
+	sed -i 's|Exec=solaar|\0 --battery-icons solaar|g' "${S}/share/autostart/solaar.desktop"
+fi
