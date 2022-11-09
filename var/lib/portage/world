@@ -15,7 +15,12 @@ app-portage/gentoolkit
 app-portage/smart-live-rebuild
 app-shells/dash
 app-shells/fzf
+app-shells/gentoo-zsh-completions
 app-shells/zsh
+app-shells/zsh-autosuggestions
+app-shells/zsh-completions
+app-shells/zsh-history-substring-search
+app-shells/zsh-syntax-highlighting
 app-text/dos2unix
 dev-lang/rust-bin
 dev-util/github-cli
@@ -38,6 +43,7 @@ gui-apps/wl-clipboard
 gui-libs/power-profiles-daemon
 mail-client/thunderbird-bin
 media-fonts/cascadia-code
+media-fonts/noto-emoji
 media-gfx/eog
 media-gfx/gnome-font-viewer
 media-gfx/gnome-photos
@@ -46,6 +52,7 @@ media-video/cheese
 sec-keys/openpgp-keys-lizalc
 sys-apps/bat
 sys-apps/bolt
+sys-apps/gnome-disk-utility
 sys-apps/nvme-cli
 sys-apps/zram-generator
 sys-auth/pam_u2f
