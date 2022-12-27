@@ -1,1 +1,1 @@
-media-video/ffmpeg libdrm
+media-video/ffmpeg libdrm libaom libv4l qsv vdpau

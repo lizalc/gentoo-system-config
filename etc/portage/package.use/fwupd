@@ -1,1 +1,1 @@
-sys-apps/fwupd dell nvme tpm uefi logitech fastboot amt cbor gnutls
+sys-apps/fwupd dell nvme tpm uefi logitech fastboot amt cbor gnutls flashrom spi

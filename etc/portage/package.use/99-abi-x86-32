@@ -1,0 +1,17 @@
+app-arch/xz-utils	ABI_X86: 32
+app-arch/zstd		ABI_X86: 32
+dev-libs/icu		ABI_X86: 32
+dev-libs/libffi		ABI_X86: 32
+dev-libs/libxml2	ABI_X86: 32
+sys-devel/clang		ABI_X86: 32
+sys-devel/clang-runtime	ABI_X86: 32
+sys-devel/llvm		ABI_X86: 32
+sys-libs/binutils-libs	ABI_X86: 32
+sys-libs/compiler-rt	ABI_X86: 32
+sys-libs/gpm		ABI_X86: 32
+sys-libs/libcxxabi	ABI_X86: 32
+sys-libs/libcxx		ABI_X86: 32
+sys-libs/libunwind	ABI_X86: 32
+sys-libs/llvm-libunwind	ABI_X86: 32
+sys-libs/ncurses	ABI_X86: 32
+sys-libs/zlib		ABI_X86: 32

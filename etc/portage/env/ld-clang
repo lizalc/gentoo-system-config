@@ -1,0 +1,3 @@
+# Some packages need to call clang for LD instead of ld.lld
+# for some reason.
+LD="clang"

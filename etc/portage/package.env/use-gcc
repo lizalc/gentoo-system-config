@@ -1,0 +1,17 @@
+sys-apps/systemd gcc-toolchain
+sys-kernel/gentoo-kernel gcc-toolchain
+#x11-drivers/nvidia-drivers gcc-toolchain
+sys-libs/glibc gcc-toolchain
+sys-devel/gcc gcc-toolchain
+sys-devel/binutils gcc-toolchain
+app-shells/bash gcc-toolchain
+sys-libs/efivar gcc-toolchain
+sys-apps/fwupd-efi gcc-toolchain
+app-crypt/seahorse gcc-toolchain
+net-misc/networkmanager gcc-toolchain
+dev-util/ostree gcc-toolchain
+sys-process/btop gcc-toolchain
+gnome-extra/gnome-contacts gcc-toolchain
+# Plymouth breaks if gawk is build using LLVM
+sys-apps/gawk gcc-toolchain
+app-editors/neovim gcc-toolchain
