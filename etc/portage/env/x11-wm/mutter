@@ -1,7 +1,0 @@
-# Attempt to have mutter let VMWare grab keys such as the Windows key and Alt+Tab.
-# So far even with this the keys do not get grabbed.
-if [ "${EBUILD_PHASE}" == "configure" ];
-then
-	elog 'Adding VMware to default "xwayland_grab_default_access_rules" option'
-	sed -i 's|virt-viewer,virt-manager|\0,vmware,Vmware|g' "${S}/meson_options.txt"
-fi
