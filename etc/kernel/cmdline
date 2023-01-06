@@ -1,1 +1,1 @@
-root=UUID=7c955b34-bf87-4286-9a7a-7a5cfca91539 ro rootflags=subvol=@gentoo rhgb quiet rd.driver.blacklist=nouveau modprobe.blacklist=nouveau
+root=UUID=<UPDATE_ME> ro rootflags=subvol=@gentoo rhgb quiet rd.driver.blacklist=nouveau modprobe.blacklist=nouveau
