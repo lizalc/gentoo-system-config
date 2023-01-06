@@ -1,0 +1,12 @@
+#-------- Interface ---------
+[org/gnome/desktop/interface]
+#----------------------------
+clock-format='12h'
+
+#-------------- Touchpad ---------------
+[org/gnome/desktop/peripherals/touchpad]
+#---------------------------------------
+tap-to-click=true
+natural-scroll=true
+two-finger-scrolling-enabled=true
+disable-while-typing=true
