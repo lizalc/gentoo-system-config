@@ -1,0 +1,23 @@
+From f7f0c248c043cece8fcaafe8b2bbb48cb1ef96c4 Mon Sep 17 00:00:00 2001
+From: Sebastian Wiesner <sebastian@swsnr.de>
+Date: Mon, 19 Dec 2022 15:09:55 +0100
+Subject: [PATCH] Fix POSIX sh comparison
+
+In POSIX sh == doesn't really exist; shellcheck warns about this.
+---
+ contrib/kernel-install/91-sbctl.install | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/contrib/kernel-install/91-sbctl.install b/contrib/kernel-install/91-sbctl.install
+index 013d2d5..cb9d6cc 100755
+--- a/contrib/kernel-install/91-sbctl.install
++++ b/contrib/kernel-install/91-sbctl.install
+@@ -7,7 +7,7 @@ KERNEL_IMAGE="$4"
+ 
+ IMAGE_FILE="$ENTRY_DIR_ABS/linux"
+ 
+-if [ "$KERNEL_INSTALL_LAYOUT" == "uki" ]; then
++if [ "$KERNEL_INSTALL_LAYOUT" = "uki" ]; then
+ 	UKI_DIR="$KERNEL_INSTALL_BOOT_ROOT/EFI/Linux"
+ 	TRIES_FILE="${KERNEL_INSTALL_CONF_ROOT:-/etc/kernel}/tries"
+ 

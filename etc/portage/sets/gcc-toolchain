@@ -1,0 +1,5 @@
+sys-devel/binutils
+sys-devel/gcc
+sys-libs/glibc
+sys-devel/binutils-config
+sys-devel/gcc-config

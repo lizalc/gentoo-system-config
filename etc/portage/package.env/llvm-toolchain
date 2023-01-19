@@ -1,0 +1,15 @@
+app-office/libreoffice		llvm-toolchain
+dev-lang/spidermonkey		llvm-toolchain
+mail-client/thunderbird		llvm-toolchain
+net-libs/webkit-gtk		llvm-toolchain
+sys-devel/clang			llvm-toolchain
+sys-devel/clang-common		llvm-toolchain
+sys-devel/clang-runtime		llvm-toolchain
+sys-devel/lld			llvm-toolchain
+sys-devel/llvm			llvm-toolchain
+sys-libs/compiler-rt		llvm-toolchain
+sys-libs/compiler-rt-sanitizers	llvm-toolchain
+sys-libs/libcxx			llvm-toolchain
+sys-libs/libcxxabi		llvm-toolchain
+sys-libs/llvm-libunwind		llvm-toolchain
+www-client/firefox		llvm-toolchain

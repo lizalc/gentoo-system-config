@@ -1,0 +1,6 @@
+if [ "${EBUILD_PHASE}" == "instprep" ]
+then
+	elog "Adding --ozone-platform-hint=auto and --enable-features=TouchpadOverscrollHistoryNavigation to desktop file"
+	elog "from ebuild phase hook in /etc/portage/env/www-client/microsoft-edge."
+	sed -i 's/Exec=.*/\0 --ozone-platform-hint=auto --enable-features=TouchpadOverscrollHistoryNavigation/g' "${ED}/usr/share/applications/microsoft-edge.desktop" || die
+fi

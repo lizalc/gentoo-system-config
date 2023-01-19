@@ -1,0 +1,26 @@
+# These settings were set by the catalyst build script that automatically
+# built this stage.
+# Please consult /usr/share/portage/config/make.conf.example for a more
+# detailed example.
+
+CC="clang"
+CXX="clang++"
+LD="ld.lld"
+ADDR2LINE="llvm-addr2line"
+AR="llvm-ar"
+AS="clang -c"
+CPP="clang-cpp"
+NM="llvm-nm"
+STRIP="llvm-strip"
+RANLIB="llvm-ranlib"
+OBJCOPY="llvm-objcopy"
+STRINGS="llvm-strings"
+OBJDUMP="llvm-objdump"
+READELF="llvm-readelf"
+
+COMMON_FLAGS="-march=native -O3 -pipe -flto=thin"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+LDFLAGS="-Wl,-z,pack-relative-relocs -fuse-ld=lld -rtlib=compiler-rt -unwindlib=libunwind -Wl,--as-needed  -Wl,-O2"
