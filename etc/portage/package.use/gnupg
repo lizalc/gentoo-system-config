@@ -1,1 +1,1 @@
-app-crypt/gnupg tpm
+app-crypt/gnupg tpm -usb

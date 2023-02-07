@@ -1,0 +1,74 @@
+#!/bin/sh
+# -*- mode: shell-script; indent-tabs-mode: nil; sh-basic-offset: 4; -*-
+# ex: ts=8 sw=4 sts=4 et filetype=sh
+# SPDX-License-Identifier: LGPL-2.1-or-later
+#
+# This file is part of systemd.
+#
+# systemd is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# systemd is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with systemd; If not, see <https://www.gnu.org/licenses/>.
+
+set -e
+
+COMMAND="${1:?}"
+KERNEL_VERSION="${2:?}"
+KERNEL_IMAGE="$4"
+
+[ "$KERNEL_INSTALL_LAYOUT" = "uki" ] || exit 0
+
+ENTRY_TOKEN="$KERNEL_INSTALL_ENTRY_TOKEN"
+BOOT_ROOT="$KERNEL_INSTALL_BOOT_ROOT"
+
+IMAGE_DIR_ABS="${BOOT_ROOT}/EFI/Linux"
+
+case "$COMMAND" in
+remove)
+	[ "$KERNEL_INSTALL_VERBOSE" -gt 0 ] \
+		&& echo "Removing $IMAGE_DIR_ABS/$ENTRY_TOKEN-$KERNEL_VERSION*.efi"
+	exec rm -f \
+		"$IMAGE_DIR_ABS/$ENTRY_TOKEN-$KERNEL_VERSION.efi" \
+		"$IMAGE_DIR_ABS/$ENTRY_TOKEN-$KERNEL_VERSION+"*".efi"
+	;;
+
+add)  ;;
+
+*)
+	exit 0
+	;;
+esac
+
+TRIES_FILE="${KERNEL_INSTALL_CONF_ROOT:-/etc/kernel}/tries"
+
+if [ -f "$TRIES_FILE" ]; then
+	read -r TRIES < "$TRIES_FILE"
+	if ! echo "$TRIES" | grep -q '^[0-9][0-9]*$'; then
+		echo "$TRIES_FILE does not contain an integer." >&2
+		exit 1
+	fi
+	IMAGE_ENTRY="$IMAGE_DIR_ABS/$ENTRY_TOKEN-$KERNEL_VERSION+$TRIES.efi"
+else
+	IMAGE_ENTRY="$IMAGE_DIR_ABS/$ENTRY_TOKEN-$KERNEL_VERSION.efi"
+fi
+
+if ! [ -d "$IMAGE_DIR_ABS" ]; then
+	echo "Error: entry directory '$IMAGE_DIR_ABS' does not exist" >&2
+	exit 1
+fi
+
+install -m 0644 "$KERNEL_IMAGE" "$IMAGE_ENTRY" || {
+	echo "Error: could not copy '$KERNEL_IMAGE' to '$IMAGE_ENTRY'." >&2
+	exit 1
+}
+chown root:root "$IMAGE_ENTRY" || :
+
+exit 0

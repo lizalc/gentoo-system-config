@@ -1,2 +1,2 @@
-gentoo:default/linux/amd64/23.0/desktop/gnome/systemd
-gentoo:default/linux/amd64/23.0/no-multilib/hardened/systemd
+gentoo:default/linux/amd64/17.1/desktop/gnome/systemd/merged-usr
+gentoo:arch/amd64/no-multilib

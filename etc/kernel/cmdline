@@ -1,1 +1,1 @@
-root=UUID=<UPDATE_ME> ro rootflags=subvol=@gentoo rhgb quiet rd.driver.blacklist=nouveau modprobe.blacklist=nouveau
+rd.auto=1 ro root=UUID=a78d6113-b6eb-4382-b3d9-1b22ebe75590 rhgb splash quiet rd.driver.blacklist=nouveau modprobe.blacklist=nouveau split_lock_detect=off nosplit_lock_detect

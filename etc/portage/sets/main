@@ -1,9 +1,9 @@
 app-admin/1password
 app-admin/sudo
 app-containers/podman
-app-crypt/sbctl
-app-crypt/sbsigntools
-app-crypt/tpm2-tools
+#app-crypt/sbctl
+#app-crypt/sbsigntools
+#app-crypt/tpm2-tools
 app-crypt/yubioath-desktop
 app-dicts/gnome-dictionary
 app-editors/code-insiders
@@ -49,6 +49,7 @@ sys-auth/pam_u2f
 sys-auth/rtkit
 sys-firmware/intel-microcode
 sys-fs/btrfs-progs
+sys-fs/mdadm
 sys-fs/xfsprogs
 sys-kernel/installkernel-systemd-boot
 sys-power/switcheroo-control
